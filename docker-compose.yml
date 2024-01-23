@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  winpower:
+    image: enolgor/winpower:latest
+    privileged: true
+    ports:
+     - 8888:8888
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+    restart: unless-stopped
