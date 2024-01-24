@@ -1,0 +1,12 @@
+[Unit]
+Description=UpsMon
+After=docker.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/opt/upsmon/upsmon -u "https://localhost:8888/0/json" -t 2m -s "/opt/upsmon/acfail.sh" -p "<post endpoint>"
+
+[Install]
+WantedBy=multi-user.target
